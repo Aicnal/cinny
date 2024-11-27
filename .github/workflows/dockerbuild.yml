@@ -19,5 +19,7 @@ jobs:
     - name: 构建并且推送到Docker Hub
       uses: docker/build-push-action@v5
       with:
+        context: .
+        file: ./Dockerfile
         push: true
-        tags: aicnal/linux-image-compressor:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/cinny:latest
